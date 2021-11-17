@@ -4,8 +4,6 @@ CREATE TABLE person (
     last_name VARCHAR NOT NULL,
     company_name VARCHAR NOT NULL
 );
-
-
 CREATE TABLE location (
     id SERIAL PRIMARY KEY,
     person_id INT NOT NULL,
