@@ -25,8 +25,9 @@ Vagrant.configure("2") do |config|
       master.vm.network "forwarded_port", guest: p, host: p, protocol: "tcp"
       end
     master.vm.provider "virtualbox" do |v|
-      v.memory = "3072"
+      v.memory = "2048"
       v.name = "master"
+      v.cpus = 2
       end
     master.vm.provision "shell", inline: <<-SHELL
       sudo zypper refresh
@@ -37,6 +38,9 @@ Vagrant.configure("2") do |config|
     SHELL
   end
 
+config.vm.provider :virtualbox do |vb|
+  vb.gui = true
+end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
