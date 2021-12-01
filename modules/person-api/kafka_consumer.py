@@ -1,9 +1,12 @@
+import app.udaconnect.services as s
 import flask.json as json
 from kafka import KafkaConsumer
-import app.udaconnect.services as s
-import logging
-logging.basicConfig(level=logging.DEBUG)
 from app import create_app
+
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 app = create_app()
 app.app_context().push()
 
